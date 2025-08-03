@@ -21,6 +21,7 @@ const StatsSection: React.FC = () => {
   };
 
   useEffect(() => {
+    const node = statsRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -36,13 +37,13 @@ const StatsSection: React.FC = () => {
       }
     );
 
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
+      if (node) {
+        observer.unobserve(node);
       }
     };
   }, [hasAnimated]);
