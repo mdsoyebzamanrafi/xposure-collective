@@ -5,7 +5,7 @@
   right: 7.5%;
   width: 85%;
   z-index: 1000;
-  background: rgba(128, 128, 128, 0.05);
+  background: rgba(64, 64, 64, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 32px;
   transition: all 0.3s ease;
