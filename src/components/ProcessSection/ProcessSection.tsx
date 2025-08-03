@@ -6,17 +6,17 @@ const ProcessSection: React.FC = () => {
     {
       number: '01',
       title: 'Consultation',
-      description: 'Get in touch with our experts to understand your digital marketing needs and goals with comprehensive analysis.'
+      description: "Let's dive into your business. We start by understanding your goals, challenges, and vision. Let's build a strategy that works for you."
     },
     {
       number: '02',
       title: 'Customized Strategy',
-      description: 'We create a tailored strategy to reach your audience and drive your business growth with innovative approaches.'
+      description: 'Stop wasting money. We build a strategy that speaks to your audience and drives real, measurable results.'
     },
     {
       number: '03',
       title: 'Watch Your Business Grow',
-      description: 'Implement our proven strategies and watch as your business reaches new heights with measurable results.'
+      description: 'Implement the plan and watch your business scale. Our strategies are driven by data, refined by experience.'
     }
   ];
 
