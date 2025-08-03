@@ -61,8 +61,10 @@ code {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(202, 138, 4, 0.4);
+  background-image: none;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 

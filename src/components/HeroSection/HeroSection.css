@@ -152,15 +152,36 @@
   color: #332200;
   border: 1px solid #b8860b;
   border-radius: 32px;
+  position: relative;
+}
+
+.hero-cta .btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #332200;
+  transition: width 0.3s ease;
 }
 
 .hero-cta .btn-primary {
   transform: none;
   box-shadow: none;
 }
+
 .hero-cta .btn-primary:hover {
+  background: linear-gradient(to bottom right, #ffffff, #b8860b);
+  color: #332200;
+  border-color: #b8860b;
   transform: none;
   box-shadow: none;
+}
+
+.hero-cta .btn-primary:hover::after {
+  width: 60%;
 }
 
 /* Responsive design */
