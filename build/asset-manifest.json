@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.543f73f6.css",
+    "main.js": "/static/js/main.d52718bf.js",
+    "static/media/Rainbow_Motion_Video_Revision.mp4": "/static/media/Rainbow_Motion_Video_Revision.fd13fdf4e2c94df6607e.mp4",
+    "index.html": "/index.html",
+    "main.543f73f6.css.map": "/static/css/main.543f73f6.css.map",
+    "main.d52718bf.js.map": "/static/js/main.d52718bf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.543f73f6.css",
+    "static/js/main.d52718bf.js"
+  ]
+}

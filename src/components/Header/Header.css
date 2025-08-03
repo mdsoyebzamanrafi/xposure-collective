@@ -1,0 +1,165 @@
+.header {
+  position: fixed;
+  top: 1rem;
+  left: 7.5%;
+  right: 7.5%;
+  width: 85%;
+  z-index: 1000;
+  background: rgba(128, 128, 128, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  transition: all 0.3s ease;
+}
+
+.header-scrolled {
+  background: rgba(128, 128, 128, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  min-height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text-main {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.logo-text-sub {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+  color: #fde047;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+.header-cta .btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(to bottom right, #b8860b, #ffffff);
+  color: #332200;
+  border: 1px solid #b8860b;
+  box-shadow: none;
+}
+
+.header-cta .btn:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0.75rem 0;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .logo-text {
+    font-size: 1.25rem;
+  }
+  
+  .header-cta .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-list {
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for header appearance */
+.header {
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

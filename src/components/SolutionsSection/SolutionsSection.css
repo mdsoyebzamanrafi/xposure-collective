@@ -1,0 +1,473 @@
+.solutions-section {
+  position: relative;
+  background: #000000;
+  height: 300vh;
+}
+
+.solutions-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.solutions-header {
+  padding-top: 80px;
+  margin-bottom: -120px;
+  position: relative;
+  z-index: 10;
+}
+
+.solutions-header h2 {
+  text-align: left;
+  font-size: 6rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.title-gradient {
+  background: linear-gradient(to right, #e2e8f0, #a0aec0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.solutions-header p {
+  font-size: 1.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+.solutions-sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  align-items: center;
+}
+
+.solution-mockup {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+}
+
+.solution-mockup:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient Backgrounds */
+.branding-mockup {
+  background: linear-gradient(to bottom right, #ff6b6b, white);
+}
+.analytics-mockup {
+  background: linear-gradient(to bottom right, #4ecdc4, white);
+}
+.marketing-mockup {
+  background: linear-gradient(to bottom right, #45b7d1, white);
+}
+.advertising-mockup {
+  background: linear-gradient(to bottom right, #667eea, white);
+}
+.performance-mockup {
+  background: linear-gradient(to bottom right, #96c93d, white);
+}
+.strategy-mockup {
+  background: linear-gradient(to bottom right, #f0932b, white);
+}
+
+.mockup-header {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.mockup-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+}
+
+.mockup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+/* Branding Mockup Styles */
+.branding-mockup .mockup-header {
+  border-bottom-color: #ff6b6b;
+}
+
+.brand-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.brand-color {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.brand-color.secondary {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+}
+
+.brand-color.accent {
+  background: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%);
+}
+
+.brand-color.neutral {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.brand-text {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Analytics Mockup Styles */
+.analytics-mockup .mockup-header {
+  border-bottom-color: #4ecdc4;
+}
+
+.analytics-chart {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.chart-bar {
+  flex: 1;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+  transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+  opacity: 0.8;
+}
+
+.analytics-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.stat-row span:first-child {
+  color: #555;
+}
+
+.stat-row span:last-child {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Marketing Mockup Styles */
+.marketing-mockup .mockup-header {
+  border-bottom-color: #45b7d1;
+}
+
+.campaign-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.campaign-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #45b7d1 0%, #96c93d 100%);
+}
+
+.campaign-details {
+  flex: 1;
+}
+
+.campaign-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.campaign-status {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.campaign-status.active {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.campaign-status.pending {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.campaign-status.completed {
+  background: #bee3f8;
+  color: #2a4365;
+}
+
+/* Advertising Mockup Styles */
+.advertising-mockup .mockup-header {
+  border-bottom-color: #667eea;
+}
+
+.ad-preview {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.ad-image {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.ad-headline {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.ad-description {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.ad-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.ad-metrics {
+  display: flex;
+  gap: 15px;
+}
+
+.metric {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.metric span:first-child {
+  color: #555;
+}
+
+.metric span:last-child {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Performance Mockup Styles */
+.performance-mockup .mockup-header {
+  border-bottom-color: #96c93d;
+}
+
+.performance-metric {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.performance-metric:last-child {
+  margin-bottom: 0;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.metric-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.metric-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #96c93d 0%, #4ecdc4 100%);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Strategy Mockup Styles */
+.strategy-mockup .mockup-header {
+  border-bottom-color: #ff6b6b;
+}
+
+.strategy-phase {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.strategy-phase:last-child {
+  margin-bottom: 0;
+}
+
+.phase-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.phase-content {
+  flex: 1;
+}
+
+.phase-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.phase-status {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .solutions-section {
+    padding: 60px 0;
+  }
+  
+  .solutions-header {
+    margin-bottom: 50px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .solution-mockup {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .solution-mockup {
+    padding: 20px;
+  }
+  
+  .mockup-title {
+    font-size: 1.1rem;
+  }
+}

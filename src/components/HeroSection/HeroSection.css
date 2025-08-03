@@ -1,0 +1,246 @@
+.hero-section {
+  position: relative;
+  z-index: 1;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 70px; /* Account for fixed header */
+  padding-bottom: 0;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  z-index: 0;
+}
+
+.nectar__bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+    overflow: hidden;
+}
+
+.nectar__bg-video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.nectar__bg-video video {
+    object-fit: cover;
+    object-position: 80% -50px;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.3);
+}
+
+.hero-content {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1001;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-text {
+  /* Animation moved to individual elements */
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem; /* Increased gap */
+  animation: fadeInUp 1s ease-out 0.2s both;
+  background: linear-gradient(to right, gold, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-tag span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #fde047;
+  border-radius: 50%;
+}
+
+.hero-title {
+  font-size: 4.5rem; /* Adjusted font size */
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 2.5rem; /* Increased gap */
+  background: linear-gradient(to right, #e2e8f0, #a0aec0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  text-shadow: none;
+}
+
+.hero-subtitle {
+  margin-bottom: 1.5rem; /* Reduced gap */
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #a0aec0;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: none;
+}
+
+.highlight {
+  color: #fde047;
+  font-weight: 600;
+  position: relative;
+  text-shadow:
+    0 0 10px rgba(253, 224, 71, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
+  opacity: 0.6;
+  box-shadow: 0 0 8px rgba(253, 224, 71, 0.4);
+}
+
+.hero-cta {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-cta .btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(to bottom right, #b8860b, #ffffff);
+  color: #332200;
+  border: 1px solid #b8860b;
+  border-radius: 32px;
+}
+
+.hero-cta .btn-primary {
+  transform: none;
+  box-shadow: none;
+}
+.hero-cta .btn-primary:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) { /* Added a new breakpoint */
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-description {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 90vh;
+    padding-top: 80px;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-subtitle {
+    margin-bottom: 2.5rem;
+  }
+  
+  .btn-large {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .btn-large {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Animation delays for staggered effect */
+.hero-title {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-description {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-cta {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

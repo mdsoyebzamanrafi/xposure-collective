@@ -1,0 +1,30 @@
+.stats-title-container {
+  text-align: center;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.stats-title-text {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #e2e8f0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.highlight-golden {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+}
+
+.highlight-golden::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
+}
