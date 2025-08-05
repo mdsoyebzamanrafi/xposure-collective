@@ -41,17 +41,17 @@ const HeroSection: React.FC = () => {
               <span></span>Full-Service
             </div>
             <h1 className="hero-title">
-              Digital Marketing Agency
+              Prenium Creative Agency
             </h1>
             
             <div className="hero-subtitle">
               <p className="hero-description">
-                Build your brand. Reach your audience. Grow with results.
+                Elevating Brands With Cinematic Precision
               </p>
             </div>
             <div className="hero-cta">
               <button className="btn btn-primary btn-large">
-                Get Started
+                Start Your Vision
               </button>
             </div>
           </div>

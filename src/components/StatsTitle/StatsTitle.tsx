@@ -23,9 +23,8 @@ const StatsTitle: React.FC = () => {
       style={{ paddingTop: `${paddingTop}px` }}
     >
       <h2 className="stats-title-text">
-        We <span className="highlight-golden">clarify</span> your brand
-        messaging and help you{' '}
-        <span className="highlight-golden">reach the right audience</span>
+        We <span className="highlight-golden">craft</span> visuals that connect, marketing that converts, and{' '}
+        <span className="highlight-golden">stories that leave a legacy</span>
       </h2>
     </div>
   );
