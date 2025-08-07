@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Header.css';
 import xLogo from '../../assets/X.png';
+
+const navLinks = [
+  { href: '#process', text: 'How It Works' },
+];
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50);
+  }, []);
 
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [handleScroll]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,7 +36,9 @@ const Header: React.FC = () => {
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <ul className="nav-list">
-              <li><a href="#process" className="nav-link">How It Works</a></li>
+              {navLinks.map((link) => (
+                <li key={link.href}><a href={link.href} className="nav-link">{link.text}</a></li>
+              ))}
             </ul>
             <div className="header-cta">
               <button className="btn btn-primary">Get Started</button>
