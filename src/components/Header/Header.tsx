@@ -26,16 +26,13 @@ const Header: React.FC = () => {
           <div className="logo">
             <img src={xLogo} alt="Xposure Collective Logo" className="logo-image" />
             <div className="logo-text">
-              <span className="logo-text-main">XPOSURE</span>
-              <span className="logo-text-sub">COLLECTIVE</span>
+              <span className="logo-text-main">XPOSURE<br />COLLECTIVE</span>
             </div>
           </div>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <ul className="nav-list">
-              <li><a href="#branding" className="nav-link">Branding</a></li>
-              <li><a href="#advertising" className="nav-link">Advertising</a></li>
-              <li><a href="#marketing" className="nav-link">Marketing</a></li>
+              <li><a href="#process" className="nav-link">How It Works</a></li>
             </ul>
             <div className="header-cta">
               <button className="btn btn-primary">Get Started</button>

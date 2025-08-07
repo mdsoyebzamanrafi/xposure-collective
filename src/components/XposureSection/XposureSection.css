@@ -1,0 +1,63 @@
+.xposure-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.xposure-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.xposure-text {
+  max-width: 50%;
+  padding-right: 40px;
+}
+
+.text-item {
+  margin-bottom: 20px;
+}
+
+.text-item h2 {
+  font-size: 2rem;
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.text-item p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.xposure-image-container {
+  position: relative;
+  width: 50%;
+  height: 500px; /* Adjust as needed */
+  perspective: 1000px;
+}
+
+.outline-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.xx-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}

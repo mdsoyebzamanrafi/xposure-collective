@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
 import StatsTitle from './components/StatsTitle/StatsTitle';
 import StatsSection from './components/StatsSection/StatsSection';
+import XposureSection from './components/XposureSection/XposureSection';
 import SolutionsSection from './components/SolutionsSection/SolutionsSection';
 import ProcessSection from './components/ProcessSection/ProcessSection';
 import CTASection from './components/CTASection/CTASection';
@@ -21,6 +22,7 @@ function App() {
       <HeroSection />
       <StatsTitle />
       <StatsSection />
+      <XposureSection />
       <SolutionsSection />
       <ProcessSection />
         <CTASection />

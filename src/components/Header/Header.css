@@ -67,6 +67,7 @@
   font-weight: 700;
   color: white;
   letter-spacing: 0.1em;
+  display: none;
 }
 
 .nav {
