@@ -2,97 +2,89 @@
   padding: 100px 0;
   background: #000000;
   color: white;
-  max-width: 90%;
-  margin: 0 auto;
+  text-align: left;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .process-header {
-  text-align: left;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .process-header .section-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  color: white;
+  margin-bottom: 1rem;
 }
 
-.process-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+.process-header .process-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
   max-width: 800px;
-  margin: 0 auto;
 }
 
-.process-step {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.process-button {
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(to bottom right, #b8860b, #ffffff);
+  color: #332200;
+  border: 1px solid #b8860b;
+  border-radius: 32px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.process-button:hover {
+  background: linear-gradient(to bottom right, #ffffff, #b8860b);
+  color: #332200;
+  border-color: #b8860b;
+}
+
+.process-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 30px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.process-step:last-child {
-  border-bottom: none;
+.process-card {
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #333;
 }
 
-.step-number {
-  font-size: 4rem;
-  font-weight: 800;
-  color: white;
-  min-width: 80px;
-  flex-shrink: 0;
-  text-align: left;
+.card-content {
+  padding: 30px;
 }
 
-.step-content {
-  flex: 1;
-}
-
-.step-title {
+.card-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: white;
 }
 
-.step-description {
+.card-description {
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 992px) {
+  .process-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-  .process-section {
-    padding: 60px 0;
-  }
-  
   .process-header .section-title {
-    font-size: 2rem;
-  }
-  
-  .process-steps {
-    gap: 40px;
-  }
-  
-  .process-step {
-    flex-direction: column;
-    text-align: left;
-    gap: 20px;
-    padding: 25px 0;
-  }
-  
-  .step-number {
     font-size: 2.5rem;
-    min-width: auto;
-    text-align: left;
-  }
-  
-  .step-title {
-    font-size: 1.3rem;
   }
 }

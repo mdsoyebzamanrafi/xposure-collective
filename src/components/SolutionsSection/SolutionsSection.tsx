@@ -36,12 +36,11 @@ const SolutionsSection: React.FC = () => {
       <div className="solutions-header-container">
         <div className="solutions-header">
           <h2>
-            <span className="title-gradient">Our Solutions</span>
+            Your Trusted Partner for <span style={{ color: '#fde047' }}>Fast & Reliable</span><br />Video Production
           </h2>
-          <p>
-            We know what it takes to build a{' '}
-            <span className="text-gradient">strong</span> brand presence
-          </p>
+          <div className="header-cta">
+            <button className="btn">Get in Touch</button>
+          </div>
         </div>
       </div>
       <div className="solutions-sticky-container">
@@ -57,25 +56,31 @@ const SolutionsSection: React.FC = () => {
             style={{ rotate: rotateTransform }}
           >
             <div className="mockup-header">
-              <div className="mockup-title">Branding</div>
+              <div className="mockup-logo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M20 7h-9" />
+                  <path d="M14 17H5" />
+                  <path d="M20 12H9" />
+                  <path d="M17 17l3-5-3-5" />
+                </svg>
+              </div>
+              <div className="mockup-title">Streamlined process</div>
             </div>
             <div className="mockup-content">
-              <div className="brand-item">
-                <div className="brand-color"></div>
-                <div className="brand-text">Primary Brand Color</div>
-              </div>
-              <div className="brand-item">
-                <div className="brand-color secondary"></div>
-                <div className="brand-text">Secondary Color</div>
-              </div>
-              <div className="brand-item">
-                <div className="brand-color accent"></div>
-                <div className="brand-text">Accent Color</div>
-              </div>
-              <div className="brand-item">
-                <div className="brand-color neutral"></div>
-                <div className="brand-text">Neutral Color</div>
-              </div>
+              <p>
+                We bring strategy and production under one roof, keeping your
+                brand's voice consistent and strong. Our integrated approach saves you time and ensures a cohesive final product, from initial concept to final delivery.
+              </p>
             </div>
           </motion.div>
 
@@ -84,26 +89,30 @@ const SolutionsSection: React.FC = () => {
             style={{ rotate: rotateTransform }}
           >
             <div className="mockup-header">
-              <div className="mockup-title">Analytics</div>
+              <div className="mockup-logo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </div>
+              <div className="mockup-title">Global coverage</div>
             </div>
             <div className="mockup-content">
-              <div className="analytics-chart">
-                <div className="chart-bar" style={{ height: '60%' }}></div>
-                <div className="chart-bar" style={{ height: '80%' }}></div>
-                <div className="chart-bar" style={{ height: '45%' }}></div>
-                <div className="chart-bar" style={{ height: '90%' }}></div>
-                <div className="chart-bar" style={{ height: '70%' }}></div>
-              </div>
-              <div className="analytics-stats">
-                <div className="stat-row">
-                  <span>Conversion Rate</span>
-                  <span>12.5%</span>
-                </div>
-                <div className="stat-row">
-                  <span>Click Through Rate</span>
-                  <span>8.2%</span>
-                </div>
-              </div>
+              <p>
+                Our crew covers 80+ cities worldwide, offering accessible,
+                convenient services to clients everywhere. No matter where you are, we have a team ready to bring your vision to life with local expertise and global quality standards.
+              </p>
             </div>
           </motion.div>
 
@@ -112,30 +121,29 @@ const SolutionsSection: React.FC = () => {
             style={{ rotate: rotateTransform }}
           >
             <div className="mockup-header">
-              <div className="mockup-title">Marketing</div>
+              <div className="mockup-logo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 3v18h18" />
+                  <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                </svg>
+              </div>
+              <div className="mockup-title">Scalable solutions</div>
             </div>
             <div className="mockup-content">
-              <div className="campaign-item">
-                <div className="campaign-icon"></div>
-                <div className="campaign-details">
-                  <div className="campaign-name">Social Media Campaign</div>
-                  <div className="campaign-status active">Active</div>
-                </div>
-              </div>
-              <div className="campaign-item">
-                <div className="campaign-icon"></div>
-                <div className="campaign-details">
-                  <div className="campaign-name">Email Marketing</div>
-                  <div className="campaign-status pending">Pending</div>
-                </div>
-              </div>
-              <div className="campaign-item">
-                <div className="campaign-icon"></div>
-                <div className="campaign-details">
-                  <div className="campaign-name">Content Strategy</div>
-                  <div className="campaign-status completed">Completed</div>
-                </div>
-              </div>
+              <p>
+                Our scalable solutions ensure your content stays top-tier,
+                whether you need one video or a hundred. We adapt to your needs, providing the same high-quality production for single projects or large-scale video campaigns.
+              </p>
             </div>
           </motion.div>
         </motion.div>

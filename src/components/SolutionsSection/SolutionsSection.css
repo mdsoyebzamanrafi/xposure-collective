@@ -19,18 +19,11 @@
 
 .solutions-header h2 {
   text-align: left;
-  font-size: 6rem;
+  font-size: 3rem;
   font-weight: 500;
   color: #ffffff;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   line-height: 1.2;
-}
-
-.title-gradient {
-  background: linear-gradient(to right, #e2e8f0, #a0aec0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .solutions-header p {
@@ -39,6 +32,41 @@
   margin: 0;
   line-height: 1.6;
   text-align: left;
+}
+
+.header-cta .btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(to bottom right, #b8860b, #ffffff);
+  color: #332200;
+  border: 1px solid #b8860b;
+  box-shadow: none;
+  position: relative;
+}
+
+.header-cta .btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #332200;
+  transition: width 0.3s ease;
+}
+
+.header-cta .btn:hover {
+  background: linear-gradient(to bottom right, #ffffff, #b8860b);
+  color: #332200;
+  border-color: #b8860b;
+  transform: none;
+  box-shadow: none;
+}
+
+.header-cta .btn:hover::after {
+  width: 60%;
 }
 
 
@@ -75,20 +103,40 @@
 }
 
 .solution-mockup:hover {
-  transform: translateY(-10px);
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+.solution-mockup::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+}
+
+.solution-mockup:hover::after {
+  left: 150%;
+}
+
 /* Gradient Backgrounds */
 .branding-mockup {
-  background: linear-gradient(to bottom right, #ff6b6b, white);
+  background: linear-gradient(to bottom right, #3a1c71, #d76d77, #ffaf7b);
 }
 .analytics-mockup {
-  background: linear-gradient(to bottom right, #4ecdc4, white);
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
 }
 .marketing-mockup {
-  background: linear-gradient(to bottom right, #45b7d1, white);
+  background: linear-gradient(to bottom right, #8e2de2, #4a00e0);
 }
 .advertising-mockup {
   background: linear-gradient(to bottom right, #667eea, white);
@@ -104,12 +152,23 @@
   margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.mockup-logo {
+  margin-bottom: 15px;
+}
+
+.mockup-logo svg {
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
 }
 
 .mockup-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #333;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -119,6 +178,11 @@
   gap: 15px;
   flex-grow: 1;
   justify-content: center;
+}
+
+.mockup-content p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
 }
 
 /* Branding Mockup Styles */
@@ -162,7 +226,7 @@
 
 /* Analytics Mockup Styles */
 .analytics-mockup .mockup-header {
-  border-bottom-color: #4ecdc4;
+  border-bottom-color: #29c7ac;
 }
 
 .analytics-chart {
@@ -213,7 +277,7 @@
 
 /* Marketing Mockup Styles */
 .marketing-mockup .mockup-header {
-  border-bottom-color: #45b7d1;
+  border-bottom-color: #c38dff;
 }
 
 .campaign-item {
