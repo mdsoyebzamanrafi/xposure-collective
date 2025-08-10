@@ -4,12 +4,11 @@ import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
 import StatsTitle from './components/StatsTitle/StatsTitle';
 import StatsSection from './components/StatsSection/StatsSection';
-import XposureSection from './components/XposureSection/XposureSection';
+import GridSection from './components/GridSection/GridSection';
 import SolutionsSection from './components/SolutionsSection/SolutionsSection';
 import ProcessSection from './components/ProcessSection/ProcessSection';
-import CTASection from './components/CTASection/CTASection';
-import CustomerSection from './components/CustomerSection/CustomerSection';
-import TeamSection from './components/TeamSection/TeamSection';
+import StudioSection from './components/StudioSection/StudioSection';
+import PortfolioSection from './components/PortfolioSection/PortfolioSection';
 import BuildReachGrowSection from './components/BuildReachGrowSection/BuildReachGrowSection';
 import FAQSection from './components/FAQSection/FAQSection';
 import Footer from './components/Footer/Footer';
@@ -22,12 +21,11 @@ function App() {
       <HeroSection />
       <StatsTitle />
       <StatsSection />
-      <XposureSection />
+      <GridSection />
       <SolutionsSection />
       <ProcessSection />
-        <CTASection />
-        <CustomerSection />
-        <TeamSection />
+      <StudioSection />
+      <PortfolioSection />
         <BuildReachGrowSection />
         <FAQSection />
       </main>

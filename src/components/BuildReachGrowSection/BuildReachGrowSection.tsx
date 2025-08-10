@@ -57,7 +57,7 @@ const BuildReachGrowSection: React.FC = () => {
           </div>
           
           <div className="brg-description">
-            <p>Transform your digital presence with our comprehensive approach to brand building, audience expansion, and sustainable growth.</p>
+            <p>Transform your brand's visual storytelling with our comprehensive video production services that build authentic connections, reach your target audience, and grow your business impact.</p>
           </div>
         </div>
       </div>

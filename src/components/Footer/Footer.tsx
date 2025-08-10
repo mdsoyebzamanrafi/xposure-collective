@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
         <div className="footer-content">
           <div className="footer-section">
             <div className="footer-logo">
-              <h3>Creativision</h3>
-              <p>Transforming brands through creative digital solutions</p>
+              <h3>Xposure Collective</h3>
+              <p>Transforming brands through professional video production</p>
             </div>
             <div className="social-links">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -42,11 +42,11 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li><a href="#solutions">Branding</a></li>
-              <li><a href="#solutions">Web Development</a></li>
-              <li><a href="#solutions">Digital Marketing</a></li>
-              <li><a href="#solutions">SEO Optimization</a></li>
-              <li><a href="#solutions">Content Creation</a></li>
+              <li><a href="#solutions">Video Production</a></li>
+              <li><a href="#solutions">Pre-Production</a></li>
+              <li><a href="#solutions">Post-Production</a></li>
+              <li><a href="#solutions">Motion Graphics</a></li>
+              <li><a href="#solutions">Brand Storytelling</a></li>
             </ul>
           </div>
 
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2"/>
                   <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2"/>
                 </svg>
-                <span>hello@creativision.com</span>
+                <span>hello@xposurecollective.com</span>
               </div>
               <div className="contact-item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
 
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2024 Creativision. All rights reserved.</p>
+            <p>&copy; 2024 Xposure Collective. All rights reserved.</p>
             <div className="footer-bottom-links">
               <a href="#privacy">Privacy Policy</a>
               <a href="#terms">Terms of Service</a>

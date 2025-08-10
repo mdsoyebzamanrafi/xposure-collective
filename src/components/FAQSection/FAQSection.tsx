@@ -11,8 +11,8 @@ const FAQSection: React.FC = () => {
 
   const faqs: FAQ[] = [
     {
-      question: "What services does Creativision offer?",
-      answer: "We offer comprehensive digital marketing services including branding, web development, social media marketing, SEO, content creation, advertising campaigns, and strategic consulting to help businesses grow their online presence."
+      question: "What video production services does Xposure Collective offer?",
+      answer: "We offer comprehensive video production services including pre-production strategy, professional filming, post-production editing, motion graphics, corporate videos, marketing content, and brand storytelling to help businesses create compelling visual narratives."
     },
     {
       question: "How long does a typical project take?",
@@ -23,24 +23,24 @@ const FAQSection: React.FC = () => {
       answer: "Yes! We work with startups, small businesses, and large enterprises. Our scalable solutions are designed to meet the unique needs and budgets of businesses at every stage of growth."
     },
     {
-      question: "What makes Creativision different from other agencies?",
-      answer: "Our data-driven approach combined with creative excellence sets us apart. We focus on measurable results, transparent communication, and building long-term partnerships with our clients rather than just completing projects."
+      question: "What makes Xposure Collective different from other video production companies?",
+      answer: "Our streamlined process and global coverage set us apart. We bring strategy and production under one roof, offer services in 80+ cities worldwide, and focus on scalable solutions with transparent communication and measurable results."
     },
     {
-      question: "Can you help improve our existing marketing efforts?",
-      answer: "Absolutely! We offer marketing audits and optimization services to improve your existing campaigns. We'll analyze your current performance and provide actionable recommendations to boost your ROI."
+      question: "Can you help improve our existing video content?",
+      answer: "Absolutely! We offer video content audits and enhancement services to improve your existing materials. We'll analyze your current video performance and provide actionable recommendations to boost engagement and conversion rates."
     },
     {
       question: "What is your pricing structure?",
       answer: "Our pricing is project-based and depends on scope, timeline, and specific requirements. We offer transparent pricing with no hidden fees and provide detailed proposals outlining all costs upfront."
     },
     {
-      question: "Do you provide ongoing support after project completion?",
-      answer: "Yes, we offer various maintenance and support packages to ensure your digital assets continue performing optimally. This includes updates, monitoring, and ongoing optimization services."
+      question: "Do you provide ongoing support after video project completion?",
+      answer: "Yes, we offer various support packages including video updates, performance monitoring, content optimization, and ongoing video marketing consultation to ensure your content continues delivering results."
     },
     {
-      question: "How do you measure success?",
-      answer: "We establish clear KPIs and success metrics at the project start, including website traffic, conversion rates, engagement metrics, and ROI. We provide regular reports showing progress against these goals."
+      question: "How do you measure video project success?",
+      answer: "We establish clear KPIs and success metrics at the project start, including video engagement rates, view completion rates, conversion metrics, and brand awareness impact. We provide detailed analytics and reports showing your video's performance."
     }
   ];
 

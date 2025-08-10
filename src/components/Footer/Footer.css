@@ -26,13 +26,13 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: linear-gradient(135deg, #40e0ff 0%, #0080ff 100%);
+  background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
 }
 
 .footer-logo h3 {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #40e0ff 0%, #0080ff 100%);
+  background: linear-gradient(135deg, #fde047 0%, #ca8a04 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -65,9 +65,9 @@
 }
 
 .social-links a:hover {
-  background: rgba(64, 224, 255, 0.1);
-  color: #40e0ff;
-  border-color: rgba(64, 224, 255, 0.3);
+  background: rgba(253, 224, 71, 0.1);
+  color: #fde047;
+  border-color: rgba(253, 224, 71, 0.3);
   transform: translateY(-3px);
 }
 
@@ -90,7 +90,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: #40e0ff;
+  color: #fde047;
   transform: translateX(5px);
 }
 
@@ -107,7 +107,7 @@
 }
 
 .contact-item svg {
-  color: #40e0ff;
+  color: #fde047;
   margin-top: 2px;
   flex-shrink: 0;
 }
@@ -148,7 +148,7 @@
 }
 
 .footer-bottom-links a:hover {
-  color: #40e0ff;
+  color: #fde047;
 }
 
 @media (max-width: 1024px) {
