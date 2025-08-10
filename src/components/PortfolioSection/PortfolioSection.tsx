@@ -129,7 +129,7 @@ const PortfolioSection: React.FC = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isAutoPlaying, isDragging, itemWidth, portfolioItems.length]);
+  }, [isAutoPlaying, isDragging, itemWidth]);
 
   // Mouse events
   const handleMouseDown = (e: React.MouseEvent) => {
