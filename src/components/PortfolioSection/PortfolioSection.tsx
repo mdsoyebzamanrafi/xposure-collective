@@ -8,6 +8,81 @@ interface PortfolioItem {
   category: string;
 }
 
+const portfolioItems: PortfolioItem[] = [
+  {
+    id: 1,
+    title: 'Retail & Ecommerce',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=200&fit=crop',
+    category: 'retail'
+  },
+  {
+    id: 2,
+    title: 'Professional Services',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop',
+    category: 'professional'
+  },
+  {
+    id: 3,
+    title: 'Software & Tech',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop',
+    category: 'tech'
+  },
+  {
+    id: 4,
+    title: 'Medical & Biotech',
+    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop',
+    category: 'medical'
+  },
+  {
+    id: 5,
+    title: 'Education',
+    image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&h=200&fit=crop',
+    category: 'education'
+  },
+  {
+    id: 6,
+    title: 'Health & Fitness',
+    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop',
+    category: 'fitness'
+  },
+  {
+    id: 7,
+    title: 'Travel & Hospitality',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=300&h=200&fit=crop',
+    category: 'travel'
+  },
+  {
+    id: 8,
+    title: 'Beauty & Fashion',
+    image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop',
+    category: 'beauty'
+  },
+  {
+    id: 9,
+    title: 'Food & Beverage',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=200&fit=crop',
+    category: 'food'
+  },
+  {
+    id: 10,
+    title: 'Real Estate',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=300&h=200&fit=crop',
+    category: 'realestate'
+  },
+  {
+    id: 11,
+    title: 'Automotive',
+    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=300&h=200&fit=crop',
+    category: 'automotive'
+  },
+  {
+    id: 12,
+    title: 'Media & Tape Production',
+    image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=300&h=200&fit=crop',
+    category: 'media'
+  }
+];
+
 const PortfolioSection: React.FC = () => {
   const [translateX, setTranslateX] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -19,81 +94,6 @@ const PortfolioSection: React.FC = () => {
   const animationRef = useRef<number>();
   const itemRef = useRef<HTMLDivElement>(null);
   const [itemWidth, setItemWidth] = useState(0);
-
-  const portfolioItems: PortfolioItem[] = [
-    {
-      id: 1,
-      title: 'Retail & Ecommerce',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=200&fit=crop',
-      category: 'retail'
-    },
-    {
-      id: 2,
-      title: 'Professional Services',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop',
-      category: 'professional'
-    },
-    {
-      id: 3,
-      title: 'Software & Tech',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=300&h=200&fit=crop',
-      category: 'tech'
-    },
-    {
-      id: 4,
-      title: 'Medical & Biotech',
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop',
-      category: 'medical'
-    },
-    {
-      id: 5,
-      title: 'Education',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&h=200&fit=crop',
-      category: 'education'
-    },
-    {
-      id: 6,
-      title: 'Health & Fitness',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop',
-      category: 'fitness'
-    },
-    {
-      id: 7,
-      title: 'Travel & Hospitality',
-      image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=300&h=200&fit=crop',
-      category: 'travel'
-    },
-    {
-      id: 8,
-      title: 'Beauty & Fashion',
-      image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop',
-      category: 'beauty'
-    },
-    {
-      id: 9,
-      title: 'Food & Beverage',
-      image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=200&fit=crop',
-      category: 'food'
-    },
-    {
-      id: 10,
-      title: 'Real Estate',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=300&h=200&fit=crop',
-      category: 'realestate'
-    },
-    {
-      id: 11,
-      title: 'Automotive',
-      image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=300&h=200&fit=crop',
-      category: 'automotive'
-    },
-    {
-      id: 12,
-      title: 'Media & Tape Production',
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=300&h=200&fit=crop',
-      category: 'media'
-    }
-  ];
 
   // Memoize the duplicated items array for performance
   const duplicatedItems = useMemo(() => [...portfolioItems, ...portfolioItems, ...portfolioItems], []);
