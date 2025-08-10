@@ -173,7 +173,7 @@ const PortfolioSection: React.FC = () => {
     <section className="portfolio-section">
       <div className="portfolio-container">
         <div className="portfolio-header">
-          <h2>We've delivered results for companies in every industry.</h2>
+          <h2>We've delivered results for companies in every industry</h2>
         </div>
 
         <div 

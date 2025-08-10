@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './SolutionsSection.css';
 
@@ -58,6 +58,19 @@ const Icon: React.FC<{ id: string }> = ({ id }) => {
 };
 
 const SolutionsSection: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -73,7 +86,7 @@ const SolutionsSection: React.FC = () => {
       <div className="solutions-header-container">
         <div className="solutions-header">
           <h2>
-            Your Trusted Partner for <span style={{ color: '#fde047' }}>Fast & Reliable</span><br />Video Production
+            Your Trusted Partner for <span style={{ color: '#9e8960' }}>Fast & Reliable</span><br />Video Production & Marketing
           </h2>
           <div className="header-cta">
             <button className="btn">Get in Touch</button>
@@ -81,23 +94,42 @@ const SolutionsSection: React.FC = () => {
         </div>
       </div>
       <div className="solutions-sticky-container">
-        <motion.div className="solutions-grid" style={{ x: xTransform, gap: gapTransform }}>
-          {solutions.map((solution) => (
-            <motion.div
-              key={solution.id}
-              className={`solution-mockup ${solution.mockupClass}`}
-              style={{ rotate: rotateTransform }}
-            >
-              <div className="mockup-header">
-                <Icon id={solution.id} />
-                <div className="mockup-title">{solution.title}</div>
+        {isMobile ? (
+          <div className="solutions-grid">
+            {solutions.map((solution) => (
+              <div
+                key={solution.id}
+                className={`solution-mockup ${solution.mockupClass}`}
+              >
+                <div className="mockup-header">
+                  <Icon id={solution.id} />
+                  <div className="mockup-title">{solution.title}</div>
+                </div>
+                <div className="mockup-content">
+                  <p>{solution.description}</p>
+                </div>
               </div>
-              <div className="mockup-content">
-                <p>{solution.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            ))}
+          </div>
+        ) : (
+          <motion.div className="solutions-grid" style={{ x: xTransform, gap: gapTransform }}>
+            {solutions.map((solution) => (
+              <motion.div
+                key={solution.id}
+                className={`solution-mockup ${solution.mockupClass}`}
+                style={{ rotate: rotateTransform }}
+              >
+                <div className="mockup-header">
+                  <Icon id={solution.id} />
+                  <div className="mockup-title">{solution.title}</div>
+                </div>
+                <div className="mockup-content">
+                  <p>{solution.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );

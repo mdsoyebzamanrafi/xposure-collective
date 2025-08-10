@@ -34,6 +34,10 @@
   text-align: left;
 }
 
+.header-cta {
+  text-align: left;
+}
+
 .header-cta .btn {
   padding: 0.85rem 1.8rem;
   font-size: 1rem;
@@ -45,28 +49,12 @@
   position: relative;
 }
 
-.header-cta .btn::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #332200;
-  transition: width 0.3s ease;
-}
-
 .header-cta .btn:hover {
   background: linear-gradient(to bottom right, #ffffff, #b8860b);
   color: #332200;
   border-color: #b8860b;
   transform: none;
   box-shadow: none;
-}
-
-.header-cta .btn:hover::after {
-  width: 60%;
 }
 
 
@@ -494,44 +482,91 @@
 @media (max-width: 768px) {
   .solutions-section {
     padding: 60px 0;
+    height: auto !important;
   }
   
   .solutions-header {
     margin-bottom: 50px;
   }
   
-  .section-title {
+  .solutions-header h2 {
     font-size: 2.2rem;
   }
   
-  .section-subtitle {
+  .solutions-header p {
     font-size: 1.1rem;
+  }
+  
+  .header-cta {
+    text-align: left;
+    display: block;
+  }
+  
+  .header-cta .btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0;
+  }
+  
+
+  
+  .solutions-sticky-container {
+    position: static;
+    height: auto;
+    overflow: visible;
   }
   
   .solutions-grid {
     grid-template-columns: 1fr;
     gap: 25px;
+    height: auto;
+    padding-bottom: 60px;
   }
   
   .solution-mockup {
     padding: 25px;
+    transform: none !important;
+    opacity: 1 !important;
+    height: auto;
+    min-height: 300px;
   }
+  
+  /* Disable framer-motion animations for mobile */
+   .solutions-section [data-framer-motion],
+   .solutions-section .motion-div,
+   .solutions-section [style*="transform"],
+   .solutions-section [style*="opacity"] {
+     animation: none !important;
+     transform: none !important;
+     transition: none !important;
+     opacity: 1 !important;
+   }
 }
 
 @media (max-width: 480px) {
-  .section-title {
+  .solutions-header h2 {
     font-size: 1.8rem;
   }
   
-  .section-subtitle {
+  .solutions-header p {
     font-size: 1rem;
   }
   
   .solution-mockup {
     padding: 20px;
+    transform: none !important;
+    opacity: 1 !important;
   }
   
   .mockup-title {
     font-size: 1.1rem;
+  }
+  
+  /* Disable specific animations for mobile */
+  .solutions-section *[style*="transform"],
+  .solutions-section *[style*="opacity"] {
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

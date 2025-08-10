@@ -99,7 +99,7 @@ const FAQSection: React.FC = () => {
         </div>
 
         <div className="faq-cta">
-          <p>Still have questions?</p>
+          <p>Tell Us About Your Project</p>
           <button className="contact-btn">Get in Touch</button>
         </div>
       </div>
