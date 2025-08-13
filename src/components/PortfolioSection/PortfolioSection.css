@@ -134,18 +134,7 @@
 
 /* Animation for slide transitions */
 .portfolio-grid {
-  animation: slideIn 0.5s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  animation: slideInRight 0.5s ease-out;
 }
 
 /* Responsive Design */

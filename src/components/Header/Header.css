@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  top: 1rem;
+  top: 0.5rem;
   left: 7.5%;
   right: 7.5%;
   width: 85%;
@@ -34,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.1rem 0;
+  padding: 0;
   min-height: 70px;
 }
 
@@ -197,7 +197,7 @@
 .header-cta .btn:hover {
   background: linear-gradient(135deg, #ffffff 0%, #9e8960 100%) !important;
   color: #2d2416 !important;
-  border-color: #9e8960 !important;
+  border-color: transparent !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(158, 137, 96, 0.3);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -281,8 +281,15 @@
 
 /* Mobile landscape and small tablets */
 @media (max-width: 900px) {
+  .header {
+    left: 2.5%;
+    right: 2.5%;
+    width: 95%;
+    border-radius: 32px;
+  }
+
   .header-content {
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 0.2rem;
   }
   
   .nav {
@@ -302,7 +309,7 @@
 
   .nav.nav-open {
     display: flex;
-    animation: slideDownMenu 0.3s ease-out;
+    animation: slideDown 0.3s ease-out;
   }
   
   .nav-list {
@@ -349,109 +356,7 @@
   }
 }
 
-/* Mobile portrait */
- @media (max-width: 768px) {
-   .header {
-     padding: 0.5rem 0;
-   }
-   
-   .header-content {
-     padding: 0.25rem 0.75rem;
-   }
-   
-   .logo {
-     gap: 0.5rem;
-   }
-   
-   .logo-image {
-     width: 50px;
-     height: 50px;
-   }
-   
-   .logo-text {
-     font-size: 1.2rem;
-   }
-   
-   .nav {
-     padding: 1.25rem 0.75rem;
-   }
-   
-   .nav-list {
-     gap: 1.25rem;
-   }
-   
-   .nav-link {
-     font-size: 1rem;
-     padding: 0.75rem;
-   }
-   
-.header-cta {
-     margin-top: 1.25rem;
-   }
-   
-   .header-cta .btn {
-     padding: 0.75rem 1.5rem;
-     font-size: 0.9rem;
-     min-width: 180px;
-   }
-   
-   .hamburger {
-     width: 22px;
-     height: 18px;
-   }
- }
 
-/* Small mobile devices */
- @media (max-width: 480px) {
-   .header-content {
-     padding: 0.25rem 0.5rem;
-   }
-   
-   .logo-image {
-     width: 45px;
-     height: 45px;
-   }
-   
-   .logo-text {
-     font-size: 1.1rem;
-   }
-   
-   .nav {
-     padding: 1rem 0.5rem;
-   }
-   
-   .nav-link {
-     font-size: 0.95rem;
-     padding: 0.65rem;
-   }
-   
-.header-cta {
-     margin-top: 1rem;
-   }
-   
-   .header-cta .btn {
-     padding: 0.7rem 1.25rem;
-     font-size: 0.85rem;
-     min-width: 160px;
-   }
-   
-   .hamburger {
-     width: 20px;
-     height: 16px;
-   }
- }
-
-/* Menu slide animation */
-@keyframes slideDownMenu {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
@@ -500,7 +405,7 @@
 .nav-link:focus,
 .header-cta .btn:focus,
 .menu-toggle:focus {
-  outline: 2px solid #9e8960;
+  outline: none;
   outline-offset: 2px;
 }
 

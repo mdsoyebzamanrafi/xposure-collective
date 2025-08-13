@@ -107,7 +107,7 @@
 /* Wide Feature Layout */
 .feature-content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 20px;
   flex: 1;
 }
@@ -247,23 +247,23 @@
 
 @media (max-width: 768px) {
   .studio-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
   
   .studio-container {
-    padding: 0 15px;
+    padding: 0 10px;
   }
   
   .studio-hero {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .hero-actions {
@@ -277,11 +277,12 @@
   }
   
   .section-header h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
     grid-template-areas:
       "large"
       "medium1"
@@ -292,7 +293,7 @@
   }
   
   .feature-card {
-    padding: 25px;
+    padding: 20px;
   }
   
   .wide-feature {
@@ -302,38 +303,38 @@
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .hero-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   
   .primary-btn,
   .secondary-btn {
-    padding: 12px 24px;
-    font-size: 0.9rem;
+    padding: 10px 20px;
+    font-size: 0.8rem;
   }
   
   .feature-card {
-    padding: 20px;
+    padding: 15px;
   }
   
   .feature-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
   
   .feature-card h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .compact-feature {
-    padding: 20px;
+    padding: 15px;
   }
   
   .feature-content {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
 }
