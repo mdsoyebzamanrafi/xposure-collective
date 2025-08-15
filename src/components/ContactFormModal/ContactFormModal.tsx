@@ -140,21 +140,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
     }
   };
 
-  const handleSubmitAnother = () => {
-    setShowThankYou(false);
 
-    setFormData({
-      firstName: '',
-      lastName: '',
-      companyName: '',
-      phoneNumber: '',
-      workEmail: '',
-      interestedIn: '',
-      numberOfEmployees: '',
-      projectOverview: '',
-      howDidYouHear: ''
-    });
-  };
 
   // Show thank you message if form was submitted
   if (showThankYou) {
@@ -168,9 +154,6 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
             business hours (Monday–Friday, 8 AM–6 PM).
           </p>
           <p>We look forward to bringing your vision to life!</p>
-          <button className="submit-another-btn" onClick={handleSubmitAnother}>
-            Submit Another Response
-          </button>
         </div>
       </div>
     );
