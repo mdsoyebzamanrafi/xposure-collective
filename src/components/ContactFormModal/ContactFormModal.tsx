@@ -32,7 +32,6 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
@@ -97,7 +96,6 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
       // Simulate form submission
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      setIsSubmitted(true);
       setIsSubmitting(false);
       setShowThankYou(true);
       
@@ -118,7 +116,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
           projectOverview: '',
           howDidYouHear: ''
         });
-        setIsSubmitted(false);
+
       }, 5000);
     } catch (error) {
       alert('There was an error sending your message. Please try again.');
@@ -135,7 +133,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
 
   const handleSubmitAnother = () => {
     setShowThankYou(false);
-    setIsSubmitted(false);
+
     setFormData({
       firstName: '',
       lastName: '',
