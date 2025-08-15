@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import xLogo from '../../assets/X.png';
+import { useModal } from '../../contexts/ModalContext';
 
 const navLinks = [
   { href: '/how-it-works', text: 'How It Works' },
@@ -12,6 +13,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { openContactModal } = useModal();
   const headerRef = useRef<HTMLElement>(null);
   const [width, setWidth] = useState<number>(window.innerWidth);
 
@@ -83,46 +85,50 @@ const Header: React.FC = () => {
 
 
   const handleGetStartedClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    openContactModal();
     setIsMenuOpen(false);
   };
 
   return (
-    <header ref={headerRef} className={`header ${isScrolled ? 'header-scrolled' : ''} ${!isVisible ? 'header-hidden' : ''}`}>
-      <div className="container">
-        <div className="header-content">
-          <Link to="/" className="logo" style={{ cursor: 'pointer', textDecoration: 'none' }}>
-            <img src={xLogo} alt="Xposure Collective Logo" className="logo-image" />
-            <div className="logo-text">
-              <span className="logo-text-main">XPOSURE<br />COLLECTIVE</span>
-            </div>
-          </Link>
-          
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <ul className="nav-list">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link to={link.href} className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                    {link.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="header-cta" style={isMobile ? { width: '100%', display: 'flex', justifyContent: 'center' } : {}}>
-              <button className="btn btn-primary" onClick={handleGetStartedClick}>Get Started</button>
-            </div>
-          </nav>
+    <>
+      <header ref={headerRef} className={`header ${isScrolled ? 'header-scrolled' : ''} ${!isVisible ? 'header-hidden' : ''}`}>
+        <div className="container">
+          <div className="header-content">
+            <Link to="/" className="logo" style={{ cursor: 'pointer', textDecoration: 'none' }}>
+              <img src={xLogo} alt="Xposure Collective Logo" className="logo-image" />
+              <div className="logo-text">
+                <span className="logo-text-main">XPOSURE<br />COLLECTIVE</span>
+              </div>
+            </Link>
+            
+            <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+              <ul className="nav-list">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link to={link.href} className="nav-link" onClick={() => setIsMenuOpen(false)}>
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="header-cta" style={isMobile ? { width: '100%', display: 'flex', justifyContent: 'center' } : {}}>
+                <button className="btn btn-primary" onClick={handleGetStartedClick}>Get Started</button>
+              </div>
+            </nav>
 
-          <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-            <div className={`hamburger ${isMenuOpen ? 'is-active' : ''}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
+            <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+              <div className={`hamburger ${isMenuOpen ? 'is-active' : ''}`}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      
+
+    </>
   );
 };
 

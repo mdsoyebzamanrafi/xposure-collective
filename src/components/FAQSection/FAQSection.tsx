@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FAQSection.css';
+import { useModal } from '../../contexts/ModalContext';
 
 interface FAQ {
   question: string;
@@ -50,11 +51,16 @@ const howItWorksFAQs: FAQ[] = [
 
 const FAQSection: React.FC<FAQSectionProps> = ({ page }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { openContactModal } = useModal();
 
   const faqs = page === 'main' ? mainFAQs : howItWorksFAQs;
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const handleContactClick = () => {
+    openContactModal();
   };
 
   return (
@@ -109,9 +115,11 @@ const FAQSection: React.FC<FAQSectionProps> = ({ page }) => {
 
         <div className="faq-cta">
           <p>Tell Us About Your Project</p>
-          <button className="contact-btn">Get in Touch</button>
+          <button className="contact-btn" onClick={handleContactClick}>Get in Touch</button>
         </div>
       </div>
+      
+
     </section>
   );
 };

@@ -15,11 +15,14 @@ import BuildReachGrowSection from './components/BuildReachGrowSection/BuildReach
 import FAQSection from './components/FAQSection/FAQSection';
 import Footer from './components/Footer/Footer';
 import HowItWorksPage from './components/HowItWorksPage/HowItWorksPage';
+import { ModalProvider, useModal } from './contexts/ModalContext';
+import ContactFormModal from './components/ContactFormModal/ContactFormModal';
 
-function App() {
+const AppContent: React.FC = () => {
+  const { isContactModalOpen, closeContactModal } = useModal();
+
   return (
-    <Router>
-      <ScrollToTop />
+    <>
       <div className="App">
         <Routes>
           <Route path="/" element={
@@ -43,6 +46,22 @@ function App() {
           <Route path="/how-it-works" element={<HowItWorksPage />} />
         </Routes>
       </div>
+      
+      <ContactFormModal 
+        isOpen={isContactModalOpen} 
+        onClose={closeContactModal} 
+      />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <ModalProvider>
+        <AppContent />
+      </ModalProvider>
     </Router>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import './SolutionsSection.css';
+import { useModal } from '../../contexts/ModalContext';
 
 interface Solution {
   id: string;
@@ -59,6 +60,11 @@ const Icon: React.FC<{ id: string }> = ({ id }) => {
 
 const SolutionsSection: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { openContactModal } = useModal();
+
+  const handleGetInTouchClick = () => {
+    openContactModal();
+  };
   
   useEffect(() => {
     const checkMobile = () => {
@@ -89,7 +95,7 @@ const SolutionsSection: React.FC = () => {
             Your Trusted Partner for <span style={{ color: '#9e8960' }}>Fast & Reliable</span><br />Video Production & Marketing
           </h2>
           <div className="header-cta">
-            <button className="btn">Get in Touch</button>
+            <button className="btn" onClick={handleGetInTouchClick}>Get in Touch</button>
           </div>
         </div>
       </div>
@@ -131,6 +137,7 @@ const SolutionsSection: React.FC = () => {
           </motion.div>
         )}
       </div>
+
     </section>
   );
 };

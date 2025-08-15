@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './HeroSection.css';
 import heroVideo from '../../assets/Rainbow_Motion_Video_Revision.mp4';
+import { useModal } from '../../contexts/ModalContext';
 
 interface HeroSectionProps {
   title?: React.ReactNode;
@@ -20,6 +21,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   tagText = "Full-Service",
 }) => {
   const heroTextRef = useRef<HTMLDivElement>(null);
+  const { openContactModal } = useModal();
+
+  const handlePrimaryButtonClick = () => {
+    openContactModal();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +69,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <p className="hero-description">{description}</p>
             </div>
             <div className="hero-cta">
-              <button className="btn btn-primary btn-large">
+              <button className="btn btn-primary btn-large" onClick={handlePrimaryButtonClick}>
                 {primaryButtonText}
               </button>
               {secondaryButtonText && (
@@ -75,6 +81,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       </div>
+      
+
     </section>
   );
 };
