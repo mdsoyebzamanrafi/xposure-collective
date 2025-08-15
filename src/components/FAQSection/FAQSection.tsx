@@ -6,43 +6,52 @@ interface FAQ {
   answer: string;
 }
 
-const FAQSection: React.FC = () => {
+interface FAQSectionProps {
+  page: 'main' | 'how-it-works';
+}
+
+const mainFAQs: FAQ[] = [
+  {
+    question: "What video production services does Xposure Collective offer?",
+    answer: "We offer comprehensive video production services including pre-production strategy, professional filming, post-production editing, motion graphics, corporate videos, marketing content, and brand storytelling to help businesses create compelling visual narratives."
+  },
+  {
+    question: "What makes Xposure Collective different from other video production companies?",
+    answer: "Our streamlined process and global coverage set us apart. We bring strategy and production under one roof, offer services in 80+ cities worldwide, and focus on scalable solutions with transparent communication and measurable results."
+  },
+  {
+    question: "What is your pricing structure?",
+    answer: "Our pricing is project-based and depends on scope, timeline, and specific requirements. We offer transparent pricing with no hidden fees and provide detailed proposals outlining all costs upfront."
+  },
+];
+
+const howItWorksFAQs: FAQ[] = [
+  {
+    question: "How long does a typical project take?",
+    answer: "Project timelines vary depending on scope and complexity. A basic website might take 2-4 weeks, while comprehensive branding and marketing campaigns can take 6-12 weeks. We'll provide a detailed timeline during our initial consultation."
+  },
+  {
+    question: "Do you work with businesses of all sizes?",
+    answer: "Yes! We work with startups, small businesses, and large enterprises. Our scalable solutions are designed to meet the unique needs and budgets of businesses at every stage of growth."
+  },
+  {
+    question: "Can you help improve our existing video content?",
+    answer: "Absolutely! We offer video content audits and enhancement services to improve your existing materials. We'll analyze your current video performance and provide actionable recommendations to boost engagement and conversion rates."
+  },
+  {
+    question: "Do you provide ongoing support after video project completion?",
+    answer: "Yes, we offer various support packages including video updates, performance monitoring, content optimization, and ongoing video marketing consultation to ensure your content continues delivering results."
+  },
+  {
+    question: "How do you measure video project success?",
+    answer: "We establish clear KPIs and success metrics at the project start, including video engagement rates, view completion rates, conversion metrics, and brand awareness impact. We provide detailed analytics and reports showing your video's performance."
+  }
+];
+
+const FAQSection: React.FC<FAQSectionProps> = ({ page }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const faqs: FAQ[] = [
-    {
-      question: "What video production services does Xposure Collective offer?",
-      answer: "We offer comprehensive video production services including pre-production strategy, professional filming, post-production editing, motion graphics, corporate videos, marketing content, and brand storytelling to help businesses create compelling visual narratives."
-    },
-    {
-      question: "How long does a typical project take?",
-      answer: "Project timelines vary depending on scope and complexity. A basic website might take 2-4 weeks, while comprehensive branding and marketing campaigns can take 6-12 weeks. We'll provide a detailed timeline during our initial consultation."
-    },
-    {
-      question: "Do you work with businesses of all sizes?",
-      answer: "Yes! We work with startups, small businesses, and large enterprises. Our scalable solutions are designed to meet the unique needs and budgets of businesses at every stage of growth."
-    },
-    {
-      question: "What makes Xposure Collective different from other video production companies?",
-      answer: "Our streamlined process and global coverage set us apart. We bring strategy and production under one roof, offer services in 80+ cities worldwide, and focus on scalable solutions with transparent communication and measurable results."
-    },
-    {
-      question: "Can you help improve our existing video content?",
-      answer: "Absolutely! We offer video content audits and enhancement services to improve your existing materials. We'll analyze your current video performance and provide actionable recommendations to boost engagement and conversion rates."
-    },
-    {
-      question: "What is your pricing structure?",
-      answer: "Our pricing is project-based and depends on scope, timeline, and specific requirements. We offer transparent pricing with no hidden fees and provide detailed proposals outlining all costs upfront."
-    },
-    {
-      question: "Do you provide ongoing support after video project completion?",
-      answer: "Yes, we offer various support packages including video updates, performance monitoring, content optimization, and ongoing video marketing consultation to ensure your content continues delivering results."
-    },
-    {
-      question: "How do you measure video project success?",
-      answer: "We establish clear KPIs and success metrics at the project start, including video engagement rates, view completion rates, conversion metrics, and brand awareness impact. We provide detailed analytics and reports showing your video's performance."
-    }
-  ];
+  const faqs = page === 'main' ? mainFAQs : howItWorksFAQs;
 
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);

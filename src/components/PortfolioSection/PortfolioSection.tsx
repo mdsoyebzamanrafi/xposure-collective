@@ -91,7 +91,7 @@ const PortfolioSection: React.FC = () => {
   const [currentX, setCurrentX] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const itemRef = useRef<HTMLDivElement>(null);
   const [itemWidth, setItemWidth] = useState(0);
 

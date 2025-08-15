@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './styles/global.css';
 import Header from './components/Header/Header';
 import HeroSection from './components/HeroSection/HeroSection';
@@ -12,25 +14,36 @@ import PortfolioSection from './components/PortfolioSection/PortfolioSection';
 import BuildReachGrowSection from './components/BuildReachGrowSection/BuildReachGrowSection';
 import FAQSection from './components/FAQSection/FAQSection';
 import Footer from './components/Footer/Footer';
+import HowItWorksPage from './components/HowItWorksPage/HowItWorksPage';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <main>
-      <HeroSection />
-      <StatsTitle />
-      <StatsSection />
-      <GridSection />
-      <SolutionsSection />
-      <ProcessSection />
-      <StudioSection />
-      <PortfolioSection />
-        <BuildReachGrowSection />
-        <FAQSection />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Header />
+              <main>
+                <HeroSection />
+                <StatsTitle />
+                <StatsSection />
+                <GridSection />
+                <SolutionsSection />
+                <ProcessSection />
+                <StudioSection />
+                <PortfolioSection />
+                <BuildReachGrowSection />
+                <FAQSection page="main" />
+              </main>
+              <Footer />
+            </>
+          } />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

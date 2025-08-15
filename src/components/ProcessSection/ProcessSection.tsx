@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProcessSection.css';
 
 const processes = [
@@ -26,18 +27,17 @@ const ProcessSection: React.FC = () => {
         <div className="process-header">
           <h2 className="section-title">From Ideation To Creation</h2>
           <p className="process-subtitle">We take care of everything you need to bring your vision to life</p>
-          <button className="process-button">View Our Process</button>
+          <Link to="/how-it-works" className="process-button">View Our Process</Link>
         </div>
 
         <div className="process-cards">
           {processes.map((process) => (
             <div key={process.title} className="process-card">
-              <div className="card-image" style={{ backgroundImage: `url(${process.image})` }}>
-                <div className="card-overlay">
-                  <div className="card-content">
-                    <h3 className="card-title">{process.title}</h3>
-                    <p className="card-description">{process.description}</p>
-                  </div>
+              <div className="card-image" style={{ backgroundImage: `url(${process.image})` }}></div>
+              <div className="card-overlay">
+                <div className="card-content">
+                  <h3 className="card-title">{process.title}</h3>
+                  <p className="card-description">{process.description}</p>
                 </div>
               </div>
             </div>

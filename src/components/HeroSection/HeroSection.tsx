@@ -2,7 +2,23 @@ import React, { useEffect, useRef } from 'react';
 import './HeroSection.css';
 import heroVideo from '../../assets/Rainbow_Motion_Video_Revision.mp4';
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  title?: React.ReactNode;
+  description?: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  showTag?: boolean;
+  tagText?: string;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({
+  title = <>Professional Video Production<br />Made Simple for You</>,
+  description = "Xposure Collective helps brands create any type of video with one trusted partner. Our fast, simple, and transparent process makes video production easier than ever.",
+  primaryButtonText = "Start Your Vision",
+  secondaryButtonText,
+  showTag = true,
+  tagText = "Full-Service",
+}) => {
   const heroTextRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,22 +52,25 @@ const HeroSection: React.FC = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-text" ref={heroTextRef}>
-            <div className="hero-tag">
-              <span></span>Full-Service
-            </div>
-            <h1 className="hero-title">
-              Professional Video Production<br></br>Made Simple for You
-            </h1>
+            {showTag && (
+              <div className="hero-tag">
+                <span></span>{tagText}
+              </div>
+            )}
+            <h1 className="hero-title">{title}</h1>
             
             <div className="hero-subtitle">
-              <p className="hero-description">
-                Xposure Collective helps brands create any type of video with one trusted partner. Our fast, simple, and transparent process makes video production easier than ever.
-              </p>
+              <p className="hero-description">{description}</p>
             </div>
             <div className="hero-cta">
               <button className="btn btn-primary btn-large">
-                Start Your Vision
+                {primaryButtonText}
               </button>
+              {secondaryButtonText && (
+                <button className="btn btn-secondary btn-large">
+                  {secondaryButtonText}
+                </button>
+              )}
             </div>
           </div>
         </div>

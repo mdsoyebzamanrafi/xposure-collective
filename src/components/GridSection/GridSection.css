@@ -21,23 +21,14 @@
 }
 
 .grid-section::before {
-  animation: move-background 30s linear infinite;
+  transform: translate(-25%, -25%);
 }
 
 .grid-section::after {
   background: 
     radial-gradient(circle at 25% 75%, rgba(158, 137, 96, 0.1) 0%, transparent 25%),
     radial-gradient(circle at 75% 25%, rgba(158, 137, 96, 0.15) 0%, transparent 30%);
-  animation: move-background 40s linear infinite reverse;
-}
-
-@keyframes move-background {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
+  transform: translate(-25%, -25%);
 }
 
 .grid-container {

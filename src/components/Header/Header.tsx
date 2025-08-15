@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import xLogo from '../../assets/X.png';
 
 const navLinks = [
-  { href: '#process', text: 'How It Works' },
+  { href: '/how-it-works', text: 'How It Works' },
 ];
 
 const Header: React.FC = () => {
@@ -79,18 +80,7 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
-    }
-  };
 
-  const handleLogoClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setIsMenuOpen(false);
-  };
 
   const handleGetStartedClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -101,23 +91,20 @@ const Header: React.FC = () => {
     <header ref={headerRef} className={`header ${isScrolled ? 'header-scrolled' : ''} ${!isVisible ? 'header-hidden' : ''}`}>
       <div className="container">
         <div className="header-content">
-          <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
+          <Link to="/" className="logo" style={{ cursor: 'pointer', textDecoration: 'none' }}>
             <img src={xLogo} alt="Xposure Collective Logo" className="logo-image" />
             <div className="logo-text">
               <span className="logo-text-main">XPOSURE<br />COLLECTIVE</span>
             </div>
-          </div>
+          </Link>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <ul className="nav-list">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <button 
-                    onClick={() => handleNavClick(link.href)} 
-                    className="nav-link"
-                  >
+                  <Link to={link.href} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                     {link.text}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

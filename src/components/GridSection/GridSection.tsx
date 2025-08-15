@@ -120,7 +120,7 @@ const GridSection = () => {
   };
 
   // Helper component to render individual image grids (mobile only)
-  const ImageGrid = ({ topImage, gridRef, isInView }: { topImage: string, gridRef: React.RefObject<HTMLDivElement>, isInView: boolean }) => {
+  const ImageGrid = ({ topImage, gridRef, isInView }: { topImage: string, gridRef: React.RefObject<HTMLDivElement | null>, isInView: boolean }) => {
     if (!isMobile) return null;
     
     return (
