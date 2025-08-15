@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ContactFormModal.css';
+import CustomDropdown from './CustomDropdown';
 
 interface ContactFormModalProps {
   isOpen: boolean;
@@ -60,6 +61,14 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
+    if (errors[name as keyof FormData]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleDropdownChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user makes selection
     if (errors[name as keyof FormData]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -250,38 +259,42 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
           </div>
 
           <div className="form-group">
-            <select
+            <CustomDropdown
               name="interestedIn"
               value={formData.interestedIn}
-              onChange={handleInputChange}
+              placeholder="I'm interested in*"
+              options={[
+                { value: "brand-video", label: "Brand Video" },
+                { value: "product-demo", label: "Product Demo" },
+                { value: "testimonial", label: "Customer Testimonial" },
+                { value: "training", label: "Training Video" },
+                { value: "event", label: "Event Coverage" },
+                { value: "animation", label: "Animation" },
+                { value: "other", label: "Other" }
+              ]}
+              onChange={handleDropdownChange}
               className={errors.interestedIn ? 'error' : ''}
-            >
-              <option value="">I'm interested in*</option>
-              <option value="brand-video">Brand Video</option>
-              <option value="product-demo">Product Demo</option>
-              <option value="testimonial">Customer Testimonial</option>
-              <option value="training">Training Video</option>
-              <option value="event">Event Coverage</option>
-              <option value="animation">Animation</option>
-              <option value="other">Other</option>
-            </select>
+              error={!!errors.interestedIn}
+            />
             {errors.interestedIn && <span className="error-message">{errors.interestedIn}</span>}
           </div>
 
           <div className="form-group">
-            <select
+            <CustomDropdown
               name="numberOfEmployees"
               value={formData.numberOfEmployees}
-              onChange={handleInputChange}
+              placeholder="Number of employees*"
+              options={[
+                { value: "1-10", label: "1-10" },
+                { value: "11-50", label: "11-50" },
+                { value: "51-200", label: "51-200" },
+                { value: "201-500", label: "201-500" },
+                { value: "500+", label: "500+" }
+              ]}
+              onChange={handleDropdownChange}
               className={errors.numberOfEmployees ? 'error' : ''}
-            >
-              <option value="">Number of employees*</option>
-              <option value="1-10">1-10</option>
-              <option value="11-50">11-50</option>
-              <option value="51-200">51-200</option>
-              <option value="201-500">201-500</option>
-              <option value="500+">500+</option>
-            </select>
+              error={!!errors.numberOfEmployees}
+            />
             {errors.numberOfEmployees && <span className="error-message">{errors.numberOfEmployees}</span>}
           </div>
 
@@ -298,20 +311,22 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onClose }) 
           </div>
 
           <div className="form-group">
-            <select
+            <CustomDropdown
               name="howDidYouHear"
               value={formData.howDidYouHear}
-              onChange={handleInputChange}
+              placeholder="How did you hear about us?*"
+              options={[
+                { value: "google", label: "Google Search" },
+                { value: "social-media", label: "Social Media" },
+                { value: "referral", label: "Referral" },
+                { value: "advertising", label: "Online Advertising" },
+                { value: "event", label: "Event/Conference" },
+                { value: "other", label: "Other" }
+              ]}
+              onChange={handleDropdownChange}
               className={errors.howDidYouHear ? 'error' : ''}
-            >
-              <option value="">How did you hear about us?*</option>
-              <option value="google">Google Search</option>
-              <option value="social-media">Social Media</option>
-              <option value="referral">Referral</option>
-              <option value="advertising">Online Advertising</option>
-              <option value="event">Event/Conference</option>
-              <option value="other">Other</option>
-            </select>
+              error={!!errors.howDidYouHear}
+            />
             {errors.howDidYouHear && <span className="error-message">{errors.howDidYouHear}</span>}
           </div>
 
